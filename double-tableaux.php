@@ -1,0 +1,39 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Panier</title>
+        <meta charset="utf-8">
+</head>    
+ 
+<?php
+
+$tableau1 = array('T-shirt rouge' , "15,50", "5");
+$tableau2 = array('T-shirt vert', "15,50", "6");
+$tableau3 = array('T-shirt argent', "15,50", "6");
+$tableau4 = array('Short bleu', "16,50", "5");
+$tableau5 = array('Short vert', "19,99", "5");   
+$tableau6 = array('Veste argent', "19,99", "10");
+$tableau7 = array('Veste argent', "35", "3");
+
+$panier = array($tableau1, $tableau2, $tableau3, $tableau4, $tableau5, $tableau6, $tableau7);
+
+function afficher_panier($panier) 
+{
+    $prix_total=0;
+    foreach ($panier as $article) 
+  { $prix_total=$prix_total+$article [2]; 
+  echo "<ul>";
+  echo "<li>".$article[0]."</li>";
+  echo "<li>".$article[1]."</li>";
+  echo "<li>".$article[2]."</li>";
+  echo "</ul>";
+  }
+  echo "<p>".$prix_total."</p>";
+  return $prix_total;
+}
+echo "<table>";
+afficher_panier($panier);
+echo "</table>"
+?>
+</html>
+
